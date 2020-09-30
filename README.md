@@ -10,19 +10,19 @@
 
 ```golang
 
-	nodes := []string{
-		"localhost:4222",
-		"localhost:4223",
-		"localhost:4224",
-		"localhost:4226",
-	}
+  nodes := []string{
+    "localhost:4222",
+    "localhost:4223",
+    "localhost:4224",
+    "localhost:4226",
+  }
 
-	nr := natsring.New(nodes)
+  nr := natsring.New(nodes)
 
   // nats.ConnのConnectと違うのは、第一引数のURLは必要ということ
   // (Newで渡したすべてのノードに接続をかけるので)
   // あとは同じようにOptionを指定していく
-	nr.ConnectAll(nats.MaxReconnects(10))
+  nr.ConnectAll(nats.MaxReconnects(10))
 
 
   // subscribe
